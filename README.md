@@ -1,34 +1,42 @@
-Added all subscription endpoints and models. Tested each in our company's Emma environment.
+#Changes in this clone: 
+
+Added all subscription endpoints and models. Tested each in our company's Emma environment. 
 Usage is as follows:
 
 Get Subscriptions:
-var getallsubs = emmasharp.GetAccountSubscritpions();
+` var getallsubs = emmasharp.GetAccountSubscritpions(); `
 
 Get Subscription Details:
-var getasub = emmasharp.GetAccountSubscription("sub id");
+`var getasub = emmasharp.GetAccountSubscription("sub id");`
 
 Get Members of a Subscription:
-var getmembersofasub = emmasharp.GetSubscriptionMembers("sub id");
+`var getmembersofasub = emmasharp.GetSubscriptionMembers("sub id");`
 
 Get Opted-Out Members of a Subscription:
-var checkforoptout = emmasharp.GetOptOutSubscriptionMembers("sub id");
+`var checkforoptout = emmasharp.GetOptOutSubscriptionMembers("sub id");`
 
 Create a New Subscription Option:
-SubscriptionNew newSub = new SubscriptionNew { Name = "Test New API", Description = "This was programmatically added by the API" };
-var postNewSub = emmasharp.PostNewSubscription(newSub);
+` SubscriptionNew newSub = new SubscriptionNew
+            {
+                Name = "Test New API",
+                Description = "This was programmatically added by the API"                
+            }; `
+`var postNewSub = emmasharp.PostNewSubscription(newSub);`
 
 Subscribe Member IDs in Bulk:
-SubscriptionBulk memberIds = new SubscriptionBulk { MemberIds = new List<long> { memberid, memberid} };
+`SubscriptionBulk memberIds = new SubscriptionBulk
+            {
+                MemberIds = new List<long> { memberid, memberid}
+            };`
 
-var bulkmemmeers = emmasharp.PostBulkMemberSubscrpitions(memberIds, "sub id");
+`var bulkmemmeers = emmasharp.PostBulkMemberSubscrpitions(memberIds, "sub id");`
 
 Update Name or Description of an Existing Subscrpition:
-SubscriptionNew editSub = new SubscriptionNew{ Name = "Test New API - UPDATED", Description = "This was programmatically added by the API - UPDATED" };
-var editasub = emmasharp.EditSubscrpition(editSub, "sub id");
+`SubscriptionNew editSub = new SubscriptionNew{ Name = "Test New API - UPDATED",  Description = "This was programmatically added by the API - UPDATED" };`
+`var editasub = emmasharp.EditSubscrpition(editSub, "sub id");`
 
 Delete an Existing Subscrpition:
-var deleteasub = emmasharp.DeleteSubscrpition("sub id");
-
+`var deleteasub = emmasharp.DeleteSubscrpition("sub id");`
 
 
 
