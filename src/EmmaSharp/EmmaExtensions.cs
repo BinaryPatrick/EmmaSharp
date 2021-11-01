@@ -13,7 +13,7 @@ namespace EmmaSharp
 {
     public static class EmmaExtensions
     {
-        public static IServiceCollection AddEmmaProviders(this IServiceCollection services, Action<EmmaOptions> optionConfiguration)
+        public static IServiceCollection AddEmmaApiProviders(this IServiceCollection services, Action<EmmaOptions> optionConfiguration)
         {
             services.AddTransient(sp =>
             {
