@@ -18,7 +18,7 @@ namespace EmmaSharp.Adapters
         /// <summary>Emma API request adapter static configuration</summary>
         static EmmaApiAdapter()
         {
-            SecurityProtocolType acceptedProtocolTypes = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
+            SecurityProtocolType acceptedProtocolTypes = SecurityProtocolType.Tls12;// | SecurityProtocolType.Tls13;
             SetAcceptedProtocolTypes(acceptedProtocolTypes);
         }
 
@@ -51,7 +51,7 @@ namespace EmmaSharp.Adapters
 
             logger.LogDebug($"Request for {request.Resource} starting");
             IRestClient client = clientFactory.GetRestClient();
-            IRestResponse response = await client.ExecuteAsync(request);
+            IRestResponse response = await client.ExecuteAsync<T>(request);
             logger.LogDebug($"Request for {request.Resource} complete with {response.StatusCode}");
 
             if (response.StatusCode >= HttpStatusCode.BadRequest)
