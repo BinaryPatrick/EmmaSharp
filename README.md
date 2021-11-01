@@ -24,7 +24,7 @@ The examples below show how to have your application pull all account fields on 
 
 ## Getting Started
 
-This version of EmmaSharp is available on NuGet under [EmmaSharpCore](https://www.nuget.org/packages/EmmaSharpCore)
+This version of EmmaSharp is available on NuGet under [EmmaSharpCore](https://www.nuget.org/packages/EmmaSharpCore/latest)
 
 ```
 Install-Package EmmaSharpCore
