@@ -4,7 +4,6 @@ A .NET wrapper for the [Emma API](http://api.myemma.com/).
 
 Targeting Frameworks
 
-- `netstandard2.1`
 - `netcoreapp3.1`
 - `net5.0`
 
