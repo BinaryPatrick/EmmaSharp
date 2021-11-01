@@ -18,7 +18,7 @@ namespace EmmaSharp.Adapters
         /// <summary>Emma API request adapter static configuration</summary>
         static EmmaApiAdapter()
         {
-            SecurityProtocolType acceptedProtocolTypes = SecurityProtocolType.Tls12;// | SecurityProtocolType.Tls13;
+            SecurityProtocolType acceptedProtocolTypes = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             SetAcceptedProtocolTypes(acceptedProtocolTypes);
         }
 
