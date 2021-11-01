@@ -7,6 +7,7 @@ using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
+using Newtonsoft.Json;
 using RestSharp;
 using Xunit;
 
@@ -31,14 +32,14 @@ namespace EmmaSharp.Unit.Tests
         {
             // Arrange
             string helloWorld = "Hello World";
-            IRestResponse<string> fakeResponse = new RestResponse<string>
+            IRestResponse fakeResponse = new RestResponse
             {
-                Data = helloWorld,
+                Content = JsonConvert.SerializeObject(helloWorld),
                 StatusCode = HttpStatusCode.OK
             };
 
             clientFactoryFake.MockRestClient
-                .Setup(x => x.ExecuteAsync<string>(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
+                .Setup(x => x.ExecuteAsync(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(fakeResponse));
 
             EmmaApiAdapter adapter = new EmmaApiAdapter(logger, clientFactoryFake, options);
@@ -60,13 +61,13 @@ namespace EmmaSharp.Unit.Tests
         public async Task MakeRequest_ShouldThrowException(HttpStatusCode status)
         {
             // Arrange
-            IRestResponse<string> fakeResponse = new RestResponse<string>
+            IRestResponse fakeResponse = new RestResponse
             {
                 StatusCode = status,
             };
 
             clientFactoryFake.MockRestClient
-                .Setup(x => x.ExecuteAsync<string>(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
+                .Setup(x => x.ExecuteAsync(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(fakeResponse));
 
             EmmaApiAdapter adapter = new EmmaApiAdapter(logger, clientFactoryFake, options);

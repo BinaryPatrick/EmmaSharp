@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serializers;
 
@@ -50,7 +51,7 @@ namespace EmmaSharp.Adapters
 
             logger.LogDebug($"Request for {request.Resource} starting");
             IRestClient client = clientFactory.GetRestClient();
-            IRestResponse<T> response = await client.ExecuteAsync<T>(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             logger.LogDebug($"Request for {request.Resource} complete with {response.StatusCode}");
 
             if (response.StatusCode >= HttpStatusCode.BadRequest)
@@ -58,10 +59,8 @@ namespace EmmaSharp.Adapters
                 throw new EmmaException(response);
             }
 
-            //T content = JsonConvert.DeserializeObject<T>(response.Content);
-            //return content;
-
-            return response.Data;
+            T content = JsonConvert.DeserializeObject<T>(response.Content);
+            return content;
         }
 
         private static uint ValidateStartPage(uint? start, uint? end)
