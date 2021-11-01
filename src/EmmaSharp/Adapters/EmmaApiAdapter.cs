@@ -51,7 +51,7 @@ namespace EmmaSharp.Adapters
 
             logger.LogDebug($"Request for {request.Resource} starting");
             IRestClient client = clientFactory.GetRestClient();
-            IRestResponse response = await client.ExecuteAsync<T>(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             logger.LogDebug($"Request for {request.Resource} complete with {response.StatusCode}");
 
             if (response.StatusCode >= HttpStatusCode.BadRequest)

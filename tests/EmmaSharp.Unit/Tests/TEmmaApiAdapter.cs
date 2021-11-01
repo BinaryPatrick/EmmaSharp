@@ -24,7 +24,12 @@ namespace EmmaSharp.Unit.Tests
             ServiceProvider services = TestingExtensions.GetBaseServices().BuildServiceProvider();
             logger = services.GetRequiredService<ILogger<EmmaApiAdapter>>();
             clientFactoryFake = new RestClientFactoryFake();
-            options = new EmmaOptions();
+            options = new EmmaOptions()
+            {
+                AccountId = "account-id",
+                PublicKey = "public-key",
+                SecretKey = "secret-key",
+            };
         }
 
         [Fact]
@@ -32,24 +37,30 @@ namespace EmmaSharp.Unit.Tests
         {
             // Arrange
             string helloWorld = "Hello World";
-            IRestResponse<string> fakeResponse = new RestResponse<string>
+            IRestResponse fakeResponse = new RestResponse
             {
                 Content = JsonConvert.SerializeObject(helloWorld),
                 StatusCode = HttpStatusCode.OK
             };
 
+            IRestRequest executedRequest = null;
             clientFactoryFake.MockRestClient
-                .Setup(x => x.ExecuteAsync<string>(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.FromResult(fakeResponse));
+                .Setup(x => x.ExecuteAsync(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
+                .Returns<IRestRequest, CancellationToken>((request, token) =>
+                {
+                    executedRequest = request;
+                    return Task.FromResult(fakeResponse);
+                });
 
             EmmaApiAdapter adapter = new EmmaApiAdapter(logger, clientFactoryFake, options);
-            RestRequest request = new RestRequest("https://google.com", Method.GET);
+            RestRequest request = new RestRequest("/{accountId}/self", Method.GET);
 
             // Act
             string response = await adapter.MakeRequest<string>(request);
 
             // Assert
             response.Should().Be(helloWorld);
+            executedRequest.Parameters.Should().HaveCount(1);
         }
 
         [Theory]
@@ -61,13 +72,13 @@ namespace EmmaSharp.Unit.Tests
         public async Task MakeRequest_ShouldThrowException(HttpStatusCode status)
         {
             // Arrange
-            IRestResponse<string> fakeResponse = new RestResponse<string>
+            IRestResponse fakeResponse = new RestResponse
             {
                 StatusCode = status,
             };
 
             clientFactoryFake.MockRestClient
-                .Setup(x => x.ExecuteAsync<string>(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
+                .Setup(x => x.ExecuteAsync(It.IsAny<IRestRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(fakeResponse));
 
             EmmaApiAdapter adapter = new EmmaApiAdapter(logger, clientFactoryFake, options);
