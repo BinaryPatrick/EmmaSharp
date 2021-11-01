@@ -1,4 +1,4 @@
-#Changes in this clone: 
+# Changes in this clone: 
 
 Added all subscription endpoints and models. Tested each in our company's Emma environment. 
 Usage is as follows:

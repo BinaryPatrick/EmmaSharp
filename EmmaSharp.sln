@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmmaSharp", "EmmaSharp\EmmaSharp.csproj", "{822E821C-9A1C-419E-AAEF-875168137E39}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F3C197C6-7514-4FFD-BCC0-F14225C57E26}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0B27A58-1BD9-4A9A-96B6-570859090CB6}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-		ReleaseNotes.md = ReleaseNotes.md
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{83589D0B-3C8F-4A47-9855-A8B6FC36D42F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmmaSharp", "src\EmmaSharp\EmmaSharp.csproj", "{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmmaSharp.Unit", "tests\EmmaSharp.Unit\EmmaSharp.Unit.csproj", "{8DED48C1-826E-450B-9FEC-9B41B4F5B537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{822E821C-9A1C-419E-AAEF-875168137E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{822E821C-9A1C-419E-AAEF-875168137E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{822E821C-9A1C-419E-AAEF-875168137E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{822E821C-9A1C-419E-AAEF-875168137E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DED48C1-826E-450B-9FEC-9B41B4F5B537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DED48C1-826E-450B-9FEC-9B41B4F5B537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DED48C1-826E-450B-9FEC-9B41B4F5B537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DED48C1-826E-450B-9FEC-9B41B4F5B537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{08B1D598-ECF9-442F-B0D8-AE40C9CBA2BB} = {F3C197C6-7514-4FFD-BCC0-F14225C57E26}
+		{8DED48C1-826E-450B-9FEC-9B41B4F5B537} = {83589D0B-3C8F-4A47-9855-A8B6FC36D42F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4687B192-83A3-4CED-B7BD-FB0A726B21AF}
 	EndGlobalSection
 EndGlobal
