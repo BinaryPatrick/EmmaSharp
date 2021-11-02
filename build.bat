@@ -1,3 +1,3 @@
 dotnet restore
-dotnet build --no-restore .\src\EmmaSharp\ --configuration Release
-XCopy .\src\EmmaSharp\bin\release\* .\dist\ /S
+dotnet build --no-restore .\src\EmmaSharper\ --configuration Release
+XCopy .\src\EmmaSharper\bin\release\* .\dist\ /S

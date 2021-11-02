@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <AssemblyName>EmmaSharper</AssemblyName>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>EmmaSharper</PackageId>
+    <Authors>kylegregory, joseph3114, BinaryPatrick</Authors>
+    <Company></Company>
+    <Product>EmmaSharperCore</Product>
+    <Description>A .NET wrapper for the Emma API (http://api.myemma.com/)</Description>
+    <PackageProjectUrl>https://github.com/joseph3114/EmmaSharper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joseph3114/EmmaSharper</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.9.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>EmmaSharper.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp3.1'">
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="[3.1,4)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="[3.1,4)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="[5.0,]" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="[5.0,]" />
+    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,]" />
+    <PackageReference Include="RestSharp" Version="[106.12,]" />
+  </ItemGroup>
+
+</Project>
