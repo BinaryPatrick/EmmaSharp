@@ -7,7 +7,7 @@ namespace EmmaSharper
     /// Provides access to create, edit, and delete searches. You can also retrieve the members matching 
     /// any search created in your account.
     /// </summary>
-    public interface ISearchProvider
+    public interface IEmmaSearchProvider
     {
         /// <summary>Create a saved search</summary>
         /// <param name="search">A name used to describe this search and a combination of search conditions, as described in the documentation.</param>

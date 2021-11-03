@@ -8,7 +8,7 @@ namespace EmmaSharper
     /// Provides access to response data. You can get overview numbers for all of your mailings and also drill down 
     /// into finding out the actual members who opened a particular mailing.
     /// </summary>
-    public interface IResponseProvider
+    public interface IEmmaResponseProvider
     {
         /// <summary>Get the list of clicks for this mailing/// </summary>
         /// <param name="mailingId">Mailing Identifier</param>

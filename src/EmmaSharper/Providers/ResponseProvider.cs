@@ -6,7 +6,7 @@ using RestSharp;
 namespace EmmaSharper
 {
     /// <inheritdoc/>
-    internal class ResponseProvider : IResponseProvider
+    internal class ResponseProvider : IEmmaResponseProvider
     {
         private readonly IEmmaApiAdapter apiAdapter;
 
@@ -163,7 +163,7 @@ namespace EmmaSharper
         }
 
         /// <inheritdoc/>
-       public async Task<IEnumerable<ResponseGeneric>> GetMailingOpens(string mailingId, uint? start = null, uint? end = null)
+        public async Task<IEnumerable<ResponseGeneric>> GetMailingOpens(string mailingId, uint? start = null, uint? end = null)
         {
             RestRequest request = new RestRequest
             {

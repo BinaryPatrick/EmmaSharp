@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace EmmaSharper
 {
     /// <summary>Provides access to automation APIs</summary>
-    public interface IAutomationProvider
+    public interface IEmmaAutomationProvider
     {
         /// <summary>Gets detailed information about a single workflow</summary>
         /// <param name="workflowId">The ID of the Workflow to return.</param>

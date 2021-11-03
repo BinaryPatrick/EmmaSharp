@@ -12,7 +12,7 @@ namespace EmmaSharper
     /// this ID to check the status and results of your import. Imports are generally pretty fast, but the time to completion 
     /// can vary with greater system usage.
     /// </summary>
-    public interface IMemberProvider
+    public interface IEmmaMemberProvider
     {
         /// <summary>Add a single member to one or more groups.</summary>
         /// <param name="memberId">Member identifier.</param>
@@ -105,7 +105,7 @@ namespace EmmaSharper
         /// <param name="includeDeleted">Accepts True. Optional flag to include deleted members.</param>
         /// <remarks>Http404 if no member is found.</remarks>
         Task<Member> GetMemberByEmail(string memberEmail, bool includeDeleted = false);
-        
+
         /// <summary>Get a count of all members in an account.</summary>
         /// <returns>A list of members in the given account.</returns>
         /// <param name="includeDeleted">Accepts True. Optional flag to include deleted members.</param>

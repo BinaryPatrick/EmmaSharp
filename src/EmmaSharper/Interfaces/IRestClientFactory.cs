@@ -2,7 +2,7 @@
 
 namespace EmmaSharper
 {
-    public interface IRestClientFactory
+    public interface IEmmaRestClientFactory
     {
         IRestClient GetRestClient();
     }

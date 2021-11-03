@@ -5,7 +5,7 @@ using RestSharp;
 namespace EmmaSharper
 {
     /// <inheritdoc/>
-    internal class SubscriptionProvider : ISubscriptionProvider
+    internal class SubscriptionProvider : IEmmaSubscriptionProvider
     {
         private readonly IEmmaApiAdapter apiAdapter;
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace EmmaSharper
 {
     /// <summary>Provides access to subscriptions and subscription members</summary>
-    public interface ISubscriptionProvider
+    public interface IEmmaSubscriptionProvider
     {
         /// <summary>Delete a subscription</summary>
         /// <returns>Information about the subscription, including the date and time it was deleted.</returns>
