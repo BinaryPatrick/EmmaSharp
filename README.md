@@ -69,7 +69,7 @@ Provides access to webhooks
 This version of EmmaSharper is available on NuGet under [EmmaSharper](https://www.nuget.org/packages/EmmaSharper/latest)
 
 ```cmd
-Install-Package EmmaSharpCore
+Install-Package EmmaSharper
 ```
 
 ## Status of the Project
