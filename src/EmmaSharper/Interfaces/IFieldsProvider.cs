@@ -8,7 +8,7 @@ namespace EmmaSharper
     /// method which lets you clear out all the data in a single field /// for all members in your account. This makes 
     /// it easy to re-initialize a dataset if you’re looking to correct an import error or syncing issue
     /// </summary>
-    public interface IFieldsProvider
+    public interface IEmmaFieldsProvider
     {
         /// <summary>Gets number of fields for paging</summary>
         /// <param name="includeDeleted">Accepts True. Optional flag to include deleted fields</param>

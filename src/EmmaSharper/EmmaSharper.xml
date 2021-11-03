@@ -22,6 +22,9 @@
         <member name="T:EmmaSharper.EmmaSharperExtensions">
             <summary>Extension methods for <see cref="N:EmmaSharper"/></summary>
         </member>
+        <member name="M:EmmaSharper.EmmaSharperExtensions.AddEmmaApiProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Add Emma API Providers</summary>
+        </member>
         <member name="M:EmmaSharper.EmmaSharperExtensions.AddEmmaApiProviders(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{EmmaSharper.EmmaOptions})">
             <summary>Add Emma API Providers</summary>
         </member>
@@ -29,7 +32,7 @@
             <summary>Add base Emma services and providers</summary>
         </member>
         <member name="M:EmmaSharper.EmmaSharperExtensions.ToEnumString``1(``0)">
-            <summary>Convert enum to string</summary>
+            <summary>Convert <see cref="T:System.Enum"/> to <see cref="T:System.String"/></summary>
         </member>
         <member name="M:EmmaSharper.EmmaSharperExtensions.AsEnumStrings``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>Converts a <see cref="T:System.Enum"/> into its direct string value, or attribute value when attributed.</summary>

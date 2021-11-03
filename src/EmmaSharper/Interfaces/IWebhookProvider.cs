@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace EmmaSharper
 {
     /// <summary>Provides access to webhooks</summary>
-    public interface IWebhookProvider
+    public interface IEmmaWebhookProvider
     {
         /// <summary>Create an new webhook</summary>
         /// <param name="webhook">The webhook to be created.</param>

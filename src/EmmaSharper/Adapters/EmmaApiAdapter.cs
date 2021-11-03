@@ -11,7 +11,7 @@ namespace EmmaSharper.Adapters
     {
         private const int MAX_PAGE_SIZE = 500;
 
-        private readonly IRestClientFactory clientFactory;
+        private readonly IEmmaRestClientFactory clientFactory;
         private readonly EmmaOptions options;
         private readonly ILogger logger;
 
@@ -22,7 +22,7 @@ namespace EmmaSharper.Adapters
             SetAcceptedProtocolTypes(acceptedProtocolTypes);
         }
 
-        public EmmaApiAdapter(ILogger<EmmaApiAdapter> logger, IRestClientFactory clientFactory, EmmaOptions options)
+        public EmmaApiAdapter(ILogger<EmmaApiAdapter> logger, IEmmaRestClientFactory clientFactory, EmmaOptions options)
         {
             this.clientFactory = clientFactory;
             this.options = options;

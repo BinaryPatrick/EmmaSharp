@@ -8,7 +8,7 @@ namespace EmmaSharper
     /// can retrieve the members to whom the mailing was sent. You can also pause mailings and cancel mailings
     /// that are pending or paused.
     /// </summary>
-    public interface IMailingProvider
+    public interface IEmmaMailingProvider
     {
         /// <summary>Get number of current mailings</summary>
         /// <param name="mailingTypes">Accepts a List with one or more of the following mailing types: ‘m’ (standard), ‘t’ (test), ‘r’ (trigger), ‘s’ (split). Defaults to ‘m,t’, standard and test mailings, when none are specified.</param>

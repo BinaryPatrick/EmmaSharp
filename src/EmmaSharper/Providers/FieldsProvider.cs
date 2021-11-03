@@ -5,7 +5,7 @@ using RestSharp;
 namespace EmmaSharper
 {
     /// <inheritdoc/>
-    internal class FieldsProvider : IFieldsProvider
+    internal class FieldsProvider : IEmmaFieldsProvider
     {
         private readonly IEmmaApiAdapter apiAdapter;
 
