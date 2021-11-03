@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace EmmaSharper.Unit.Fakes
 {
-    public class RestClientFactoryFake : IRestClientFactory
+    public class RestClientFactoryFake : IEmmaRestClientFactory
     {
         public Mock<IRestClient> MockRestClient { get; } = new Mock<IRestClient>();
 

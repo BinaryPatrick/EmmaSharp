@@ -9,7 +9,7 @@ namespace EmmaSharper
     /// methods if you’re managing group membership for more than one member at a time. For dealing with single 
     /// members, there are better methods in the members endpoints.
     /// </summary>
-    public interface IGroupProvider
+    public interface IEmmaGroupProvider
     {
         /// <summary>Get number of all active member groups for a single account</summary>
         /// <returns>An int of groups.</returns>

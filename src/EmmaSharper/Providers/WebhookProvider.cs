@@ -5,7 +5,7 @@ using RestSharp;
 namespace EmmaSharper
 {
     /// <inheritdoc/>
-    internal class WebhookProvider : IWebhookProvider
+    internal class WebhookProvider : IEmmaWebhookProvider
     {
         private readonly IEmmaApiAdapter apiAdapter;
 

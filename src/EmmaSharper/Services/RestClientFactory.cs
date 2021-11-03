@@ -4,11 +4,12 @@ using RestSharp.Authenticators;
 
 namespace EmmaSharper.Services
 {
-    internal class RestClientFactory : IRestClientFactory
+    internal class EmmaRestClientFactory : IEmmaRestClientFactory
+
     {
         private readonly EmmaOptions options;
 
-        public RestClientFactory(EmmaOptions options)
+        public EmmaRestClientFactory(EmmaOptions options)
         {
             this.options = options;
         }
