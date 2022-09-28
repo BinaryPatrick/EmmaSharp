@@ -6,6 +6,7 @@ Targeting Frameworks
 
 - `netcoreapp3.1`
 - `net5.0`
+- `net6.0`
 
 ## Sample Usage
 
