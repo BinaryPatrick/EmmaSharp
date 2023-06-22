@@ -28,7 +28,7 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
-      run: dotnet pack ./src\EmmaSharper/EmmaSharper.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack ./src/EmmaSharper/EmmaSharper.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push
       run: dotnet nuget push EmmaSharper.${VERSION}.nupkg -k ${NUGET_TOKEN} -s https://api.nuget.org/v3/index.json
       env:
